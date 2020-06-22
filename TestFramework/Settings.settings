@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TestFramework" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Login" Type="System.String" Scope="User">
+      <Value Profile="(Default)">demoaw@getnada.com</Value>
+    </Setting>
+    <Setting Name="Password" Type="System.String" Scope="User">
+      <Value Profile="(Default)">111111</Value>
+    </Setting>
+    <Setting Name="Url" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://automationpractice.com</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
