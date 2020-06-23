@@ -9,7 +9,7 @@
       <Value Profile="(Default)">111111</Value>
     </Setting>
     <Setting Name="Url" Type="System.String" Scope="User">
-      <Value Profile="(Default)">http://automationpractice.com</Value>
+      <Value Profile="(Default)">http://webdriveruniversity.com</Value>
     </Setting>
   </Settings>
 </SettingsFile>

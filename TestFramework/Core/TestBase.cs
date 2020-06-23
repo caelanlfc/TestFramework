@@ -12,7 +12,7 @@ using TestFramework.Helpers;
 
 namespace TestFramework.Core
 {
-    class TestBase
+    public class TestBase
     {
         public static List<Browsers> BrowsersToRunWith = new List<Browsers> // Creating a list of browsers to run
         {
@@ -29,7 +29,7 @@ namespace TestFramework.Core
             {
                 case Browsers.Chrome:
                     ChromeOptions chromeOptions = new ChromeOptions();
-                    chromeOptions.AddArgument("-land = en-GB");
+                    chromeOptions.AddArgument("--land=en-GB");
                     Driver = new ChromeDriver(chromeOptions);
                     break;
 

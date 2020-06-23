@@ -49,7 +49,7 @@ namespace TestFramework {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://automationpractice.com")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://webdriveruniversity.com")]
         public string Url {
             get {
                 return ((string)(this["Url"]));
