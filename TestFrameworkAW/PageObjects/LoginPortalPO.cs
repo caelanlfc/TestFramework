@@ -16,7 +16,7 @@ namespace TestFrameworkAW.PageObjects
         {
             get
             {
-                return TestEnvironment.Url + "Login-Portal/index.html";
+                return TestEnvironment.Url + "/Login-Portal/index.html";
             }
         }
         private readonly string _validationElementID = "login-button";
@@ -30,5 +30,28 @@ namespace TestFrameworkAW.PageObjects
             WaitTestFunctions.WaitForElementToBecomeVisible(_driver, By.Id(_validationElementID));
         }
 
+        public void AssertsAllElementsDisplayed()
+        {
+            CommonAssertions.AssertElementIsDisplayed(LoginTB);
+            CommonAssertions.AssertElementIsDisplayed(PasswordTB);
+            CommonAssertions.AssertElementIsDisplayed(LoginButton);
+        }
+
+        public void EnterCredentialsAndPressLogin()
+        { 
+            WebElementFunctions.EnterText(LoginTB, "login");
+            WebElementFunctions.EnterText(PasswordTB, "password");
+            WebElementFunctions.ClickOnButton(LoginButton);
+            WebElementFunctions.PressEnterButton(_driver);
+        }
+
+        [FindsBy(How = How.Id, Using = "text")]
+        public IWebElement LoginTB { get; set; }
+
+        [FindsBy(How = How.Id, Using = "password")]
+        public IWebElement PasswordTB { get; set; }
+
+        [FindsBy(How = How.Id, Using = "login-button")]
+        public IWebElement LoginButton { get; set; }
     }
 }

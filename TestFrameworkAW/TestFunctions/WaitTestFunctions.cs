@@ -29,7 +29,9 @@ namespace TestFrameworkAW.TestFunctions
         public static void WaitForUrl(IWebDriver driver, string expectedUrl)
         {
             Wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+            string actualUrl = driver.Url;
             Wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.UrlToBe(expectedUrl));
+            
         }
     }
 }
