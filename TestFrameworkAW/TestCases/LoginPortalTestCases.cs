@@ -23,6 +23,7 @@ namespace TestFrameworkAW.TestCases
             CommonFunctions.GoToUrl(Driver, MainPagePO.Url);
             MainPagePO mainPagePO = new MainPagePO(Driver);
             mainPagePO.GoToLoginPortal();
+            CommonFunctions.SwitchToTab(Driver, "WebDriver | Login Portal");
             LoginPortalPO loginPortalPO = new LoginPortalPO(Driver);
             loginPortalPO.AssertsAllElementsDisplayed();
             loginPortalPO.EnterCredentialsAndPressLogin();
