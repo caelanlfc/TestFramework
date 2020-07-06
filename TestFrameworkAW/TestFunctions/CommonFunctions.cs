@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,13 +20,9 @@ namespace TestFrameworkAW.TestFunctions
         {
             bool tabSwitched = false;
 
-
-
             foreach (var handle in driver.WindowHandles)
             {
                 driver.SwitchTo().Window(handle);
-
-
 
                 if (driver.Title == tabTitle)
                 {
@@ -33,7 +30,6 @@ namespace TestFrameworkAW.TestFunctions
                     break;
                 }
             }
-
 
             if (!tabSwitched)
             {
@@ -49,8 +45,6 @@ namespace TestFrameworkAW.TestFunctions
             {
                 driver.SwitchTo().Window(handle);
 
-
-
                 if (driver.Title == tabTitle)
                 {
                     driver.Close();
@@ -63,10 +57,21 @@ namespace TestFrameworkAW.TestFunctions
                 throw new ArgumentException(string.Format("[CloseTab]: Tab '{0}' has not been closed. Actual: '{1}'", tabTitle, driver.Title));
             }
         }
-
         public static void CloseCurrentTab(IWebDriver driver)
         {
             driver.Close();
+        }
+
+        public static void WindowDisplayedAndClose(IWebDriver driver, IWebElement window, string header, string content, string close)
+        {
+            WaitTestFunctions.WaitForElementToBecomeVisible(driver, By.ClassName("modal-content"));
+            IWebElement headerLabel = WebElementFunctions.FindChildElement(driver, window, By.ClassName("modal-header"));
+            IWebElement contentText = WebElementFunctions.FindChildElement(driver, window, By.ClassName("modal-body"));
+            IWebElement closeButton = WebElementFunctions.FindChildElement(driver, window, By.ClassName("btn-default"));
+            Assert.AreEqual(header, headerLabel.Text);
+            Assert.AreEqual(content, contentText.Text);
+            Assert.AreEqual(close, closeButton.Text);
+            WebElementFunctions.ClickOnButton(closeButton);
         }
     }
 }

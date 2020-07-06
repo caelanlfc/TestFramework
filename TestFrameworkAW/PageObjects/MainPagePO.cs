@@ -35,9 +35,15 @@ namespace TestFrameworkAW.PageObjects
             WaitTestFunctions.WaitForUrl(_driver, Url);
             WebElementFunctions.ClickOnButton(LoginPortalLink);
         }
+        public void GoToButtonClicks()
+        {
+            WaitTestFunctions.WaitForUrl(_driver, Url);
+            WebElementFunctions.ClickOnButton(ButtonClicks);
+        }
 
         [FindsBy(How = How.Id, Using = "login-portal")]
         public IWebElement LoginPortalLink { get; set; }
-
+        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/div/div[2]/div[5]/a/div/div[1]/h1")]
+        public IWebElement ButtonClicks { get; set; }
     }
 }

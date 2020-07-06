@@ -26,6 +26,15 @@ namespace TestFrameworkAW
             loginPortalTestCases.Login();
         }
 
+        [Test]
+        [Category("ButtonClicks")]
+        [TestCaseSource(typeof(TestBase), "GetBrowserToRunWith")]
+        public void ButtonClicks(Browsers browserName)
+        {
+            LaunchProperBrowser(browserName);
+            ButtonClicksTestCases buttonClicksTestCases = new ButtonClicksTestCases(Driver);
+            buttonClicksTestCases.ButtonClicks();
+        }
 
     }
 }

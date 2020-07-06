@@ -73,9 +73,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="PageObjects\AccordionAndTextAffectsPO.cs" />
+    <Compile Include="PageObjects\ActionsPO.cs" />
+    <Compile Include="PageObjects\AjaxLoaderPO.cs" />
+    <Compile Include="PageObjects\AutocompleteTextfieldPO.cs" />
+    <Compile Include="PageObjects\ButtonClicksPO.cs" />
+    <Compile Include="PageObjects\DataTablesAndButtonStatesPO.cs" />
+    <Compile Include="PageObjects\DatepickerPO.cs" />
+    <Compile Include="PageObjects\DropdownCheckboxesRadioButtonsPO.cs" />
+    <Compile Include="PageObjects\FileUploadPO.cs" />
+    <Compile Include="PageObjects\HiddenElementsPO.cs" />
+    <Compile Include="PageObjects\IFramePO.cs" />
     <Compile Include="PageObjects\LoginPortalPO.cs" />
     <Compile Include="PageObjects\MainPagePO.cs" />
+    <Compile Include="PageObjects\PageObjectModelPO.cs" />
+    <Compile Include="PageObjects\PopupAndAlertsPO.cs" />
+    <Compile Include="PageObjects\ScrollingAroundPO.cs" />
+    <Compile Include="PageObjects\ToDoListPO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestCases\ButtonClicksTestCases.cs" />
     <Compile Include="TestCases\LoginPortalTestCases.cs" />
     <Compile Include="TestFunctions\CommonAssertions.cs" />
     <Compile Include="TestFunctions\CommonFunctions.cs" />
