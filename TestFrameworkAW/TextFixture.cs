@@ -29,11 +29,31 @@ namespace TestFrameworkAW
         [Test]
         [Category("ButtonClicks")]
         [TestCaseSource(typeof(TestBase), "GetBrowserToRunWith")]
-        public void ButtonClicks(Browsers browserName)
+        public void ButtonWebElementClick(Browsers browserName)
         {
             LaunchProperBrowser(browserName);
             ButtonClicksTestCases buttonClicksTestCases = new ButtonClicksTestCases(Driver);
-            buttonClicksTestCases.ButtonClicks();
+            buttonClicksTestCases.ButtonWebElementClick();
+        }
+
+        [Test]
+        [Category("ButtonClicks")]
+        [TestCaseSource(typeof(TestBase), "GetBrowserToRunWith")]
+        public void ButtonJavaScriptClick(Browsers browserName)
+        {
+            LaunchProperBrowser(browserName);
+            ButtonClicksTestCases buttonClicksTestCases = new ButtonClicksTestCases(Driver);
+            buttonClicksTestCases.ButtonJavaScriptClick();
+        }
+
+        [Test]
+        [Category("ButtonClicks")]
+        [TestCaseSource(typeof(TestBase), "GetBrowserToRunWith")]
+        public void ButtonActionMoveAndClick(Browsers browserName)
+        {
+            LaunchProperBrowser(browserName);
+            ButtonClicksTestCases buttonClicksTestCases = new ButtonClicksTestCases(Driver);
+            buttonClicksTestCases.ButtonActionMoveAndClick();
         }
 
     }

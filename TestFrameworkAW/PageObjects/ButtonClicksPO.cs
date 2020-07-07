@@ -47,9 +47,28 @@ namespace TestFrameworkAW.PageObjects
             WebElementFunctions.ClickOnButton(ClickMeXPathButton);
         }
 
-        public void WindowDisplayedAndClose()
+        public void OpenJavaScriptClick()
+        {
+            WebElementFunctions.ClickOnButton(ClickMeCssButton);
+        }
+        public void OpenActionAndMoveClick()
+        {
+            WebElementFunctions.ClickOnButton(ClickMeIdButton);
+        }
+
+        public void WebElementClick()
         {
             CommonFunctions.WindowDisplayedAndClose(_driver, Window, "×\r\nCongratulations!", "Well done for successfully using the click() method!", "Close");
+        }
+
+        public void JavaScriptClick()
+        {
+            CommonFunctions.WindowDisplayedAndClose(_driver, Window, "It’s that Easy!! Well I think it is.....", "We can use JavaScript code if all else fails! Remember always try to use the WebDriver Library method(s) first such as WebElement.click(). (The Selenium development team have spent allot of time developing WebDriver functions etc).", "Close");
+        }
+
+        public void ActionMoveAndClick()
+        {
+            CommonFunctions.WindowDisplayedAndClose(_driver, Window, "Well done! the Action Move & Click can become very useful!", "Advanced user interactions (API) has been developed to enable you to perform more complex interactions such as", "Close");
         }
 
         [FindsBy(How = How.XPath, Using = "/html/body/div/div[1]/div/h1")]

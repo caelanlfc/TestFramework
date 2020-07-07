@@ -16,7 +16,7 @@ namespace TestFrameworkAW.TestCases
         {
             Driver = driver;
         }
-        public void ButtonClicks()
+        public void ButtonWebElementClick()
         {
             CommonFunctions.GoToUrl(Driver, MainPagePO.Url);
             MainPagePO mainPagePO = new MainPagePO(Driver);
@@ -25,7 +25,32 @@ namespace TestFrameworkAW.TestCases
             ButtonClicksPO buttonClicksPO = new ButtonClicksPO(Driver);
             buttonClicksPO.AssertsAllElementsDisplayed();
             buttonClicksPO.OpenWebElementClick();
-            buttonClicksPO.WindowDisplayedAndClose();
+            buttonClicksPO.WebElementClick();
         }
+
+        public void ButtonJavaScriptClick()
+        {
+            CommonFunctions.GoToUrl(Driver, MainPagePO.Url);
+            MainPagePO mainPagePO = new MainPagePO(Driver);
+            mainPagePO.GoToButtonClicks();
+            CommonFunctions.SwitchToTab(Driver, "WebDriver | Button Clicks");
+            ButtonClicksPO buttonClicksPO = new ButtonClicksPO(Driver);
+            buttonClicksPO.AssertsAllElementsDisplayed();
+            buttonClicksPO.OpenJavaScriptClick();
+            buttonClicksPO.JavaScriptClick();
+        }
+
+        public void ButtonActionMoveAndClick()
+        {
+            CommonFunctions.GoToUrl(Driver, MainPagePO.Url);
+            MainPagePO mainPagePO = new MainPagePO(Driver);
+            mainPagePO.GoToButtonClicks();
+            CommonFunctions.SwitchToTab(Driver, "WebDriver | Button Clicks");
+            ButtonClicksPO buttonClicksPO = new ButtonClicksPO(Driver);
+            buttonClicksPO.AssertsAllElementsDisplayed();
+            buttonClicksPO.OpenActionAndMoveClick();
+            buttonClicksPO.ActionMoveAndClick();
+        }
+
     }
 }
